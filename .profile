@@ -1,4 +1,4 @@
-PS1="\u@\h \[\e[32m\]\w \[\e[00m\]$ "
+PS1="\u@\h \[\e[36m\]\w \[\e[00m\]$ "
 
 # color ls!
 export CLICOLOR='yes'
