@@ -1,11 +1,14 @@
-PS1="\u@\h \[\e[36m\]\w \[\e[00m\]$ "
+PS1='\u@\h \[\033[36m\]\w \[\033[00m\]$ '
 
 # color ls!
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
 
-# make less/man output stay on screen
-export LESS='-R -X'
+# case insensitve searching, handle color, keep output on screen
+export LESS='-iRX'
+
+# color grep matches
+export GREP_OPTIONS='--color=auto'
 
 # aliases
 alias ll='ls -lAh'

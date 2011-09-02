@@ -1,1 +1,4 @@
+# global and local gitignore file. confusing!
 .DS_Store
+*.swp
+
