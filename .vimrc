@@ -1,4 +1,5 @@
 set title
+set nocompatible
 
 " tabs!
 set expandtab
@@ -15,7 +16,8 @@ set ruler
 set ls=2
 
 " colors!!!
-syntax on
+set bg=dark
+syntax enable
 highlight LineNr ctermfg=darkgrey
 
 " search
