@@ -1,1 +1,25 @@
-this are my config files
+OS X Terminal config files for Lion/xterm-256color.
+
+I just create symlinks to these files from my $HOME directory ("ln -s $HOME/code/dot_files/.inputrc ~" for example).
+
+Terminal key setup (this makes bash, vim, and irssi work how I like):
+  end               \033[4~
+  home              \033[1~
+  page down         \033[6~
+  page up           \033[5~
+  shift end         scroll to end of buffer
+  shift home        scroll to beginning of buffer
+  shift page down   scroll to next page in buffer
+  shift page up     scroll to previous page in buffer
+
+I also turn "Use option as meta key" on - the default meta key is the escape key.
+
+Another possibility is to use \033[F for end and \033[H for home, and add the following to .vimrc:
+  nmap <esc>[H 0
+  imap <esc>[H <esc>I
+  cmap <esc>[H <home>
+  nmap <esc>[F $
+  imap <esc>[F <esc>A
+  cmap <esc>[F <end>
+
+Using .inputrc seemed cleaner.
