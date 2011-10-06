@@ -12,4 +12,3 @@ export GREP_OPTIONS='--color=auto'
 alias ll='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
-
