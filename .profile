@@ -1,5 +1,3 @@
-PS1='\u@\h \[\033[36m\]\w \[\033[00m\]$ '
-
 # color ls!
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
