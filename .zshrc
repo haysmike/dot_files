@@ -17,8 +17,9 @@ bindkey "\e[6~" end-of-history
 export HISTSIZE=1024
 export SAVEHIST=1024
 export HISTFILE=~/.zsh_history
-setopt share_history
+setopt append_history
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_no_store
 
 source .profile
-
