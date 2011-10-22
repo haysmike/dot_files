@@ -15,3 +15,7 @@ export EDITOR='vim'
 alias ll='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+# tcl
+alias tclsh='rlwrap tclsh'
+
