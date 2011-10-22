@@ -1,5 +1,6 @@
 # completion
 autoload -U compinit && compinit
+setopt no_auto_menu
 
 # prompt
 autoload -U colors && colors
