@@ -16,9 +16,10 @@ set ruler
 set ls=2
 
 " colors!!!
-set bg=dark
 syntax enable
-highlight LineNr ctermfg=darkgrey
+set cursorline
+colorscheme jellybeans
+highlight StatusLine ctermbg=233
 
 " search
 set ignorecase
