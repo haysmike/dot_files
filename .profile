@@ -19,3 +19,6 @@ alias ...='cd ../..'
 # tcl
 alias tclsh='rlwrap tclsh'
 
+# git
+alias s='git status'
+alias d='git diff'

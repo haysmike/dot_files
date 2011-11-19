@@ -19,6 +19,7 @@ set ls=2
 syntax enable
 set cursorline
 colorscheme jellybeans
+highlight Normal ctermbg=0
 highlight StatusLine ctermbg=233
 
 " search
