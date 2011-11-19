@@ -8,6 +8,9 @@ export LESS='-iRX'
 # color grep matches
 export GREP_OPTIONS='--color=auto'
 
+# thpppppppppppppppt!
+export ACK_OPTIONS='--smart-case -C5'
+
 # default editor
 export EDITOR='vim'
 
