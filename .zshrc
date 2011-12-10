@@ -1,10 +1,12 @@
 # completion
 autoload -U compinit && compinit
 setopt no_auto_menu
+setopt no_beep
 
 # prompt
 autoload -U colors && colors
-PROMPT="%n@%m %{$fg[cyan]%}%~%{$reset_color%} %% "
+PS1="%n@%m %{$fg[cyan]%}%~%{$reset_color%} %% "
+RPS1="%t"
 
 # key bindings
 bindkey "\e[1~" beginning-of-line

@@ -1,5 +1,6 @@
 set title
 set nocompatible
+set nowrap
 
 " tabs!
 set expandtab
@@ -20,7 +21,6 @@ syntax enable
 set cursorline
 colorscheme jellybeans
 highlight Normal ctermbg=0
-highlight StatusLine ctermbg=233
 
 " search
 set ignorecase
