@@ -27,3 +27,8 @@ set ignorecase
 set smartcase
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" leader
+let mapleader = ","
+let g:mapleader = ","
+
