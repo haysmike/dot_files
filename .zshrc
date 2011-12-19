@@ -5,7 +5,7 @@ setopt no_beep
 
 # prompt
 autoload -U colors && colors
-PS1="%n@%m %{$fg[cyan]%}%~%{$reset_color%} %% "
+PS1="%n@%m %F{cyan}%~%f %(?..%F{red})%#%f "
 RPS1="%t"
 
 # key bindings
@@ -19,8 +19,8 @@ bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
 # history
-export HISTSIZE=1024
-export SAVEHIST=1024
+export HISTSIZE=2000
+export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zsh_history
 setopt append_history
 setopt hist_ignore_all_dups
