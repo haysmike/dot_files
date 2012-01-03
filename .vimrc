@@ -1,6 +1,7 @@
 set title
 set nocompatible
 set nowrap
+set backspace=2
 
 " tabs!
 set expandtab
