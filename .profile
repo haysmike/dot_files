@@ -22,3 +22,7 @@ alias tclsh='rlwrap tclsh'
 # git
 alias s='git status'
 alias d='git diff'
+
+# path
+export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
+

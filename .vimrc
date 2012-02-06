@@ -18,10 +18,13 @@ set ruler
 set ls=2
 
 " colors!!!
-syntax enable
+syntax on
+filetype plugin indent on
 set cursorline
+set background=dark
 colorscheme jellybeans
-highlight Normal ctermbg=0
+highlight Normal ctermbg=16
+highlight NonText ctermbg=16
 
 " search
 set ignorecase
@@ -32,4 +35,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " leader
 let mapleader = ","
 let g:mapleader = ","
+
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
