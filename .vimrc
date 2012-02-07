@@ -45,9 +45,3 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 let mapleader = ","
 let g:mapleader = ","
 
-" wait what
-if has("gui_running")
-  set guifont=Menlo:h13
-  let g:Powerline_symbols = 'fancy'
-endif
-

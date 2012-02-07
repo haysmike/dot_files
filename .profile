@@ -17,13 +17,17 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # tcl
-alias tclsh='rlwrap tclsh'
+[[ -n $(whence rlwrap) ]] && alias tclsh='rlwrap tclsh'
 
 # git
-alias s='git status'
-alias d='git diff'
+if [[ -n $(whence git) ]]; then
+  alias s='git status'
+  alias d='git diff'
+fi
 
 # path
-export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
+[[ -n $(whence brew) ]] && export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
 
-[[ -s "/Users/chineseroommate/.rvm/scripts/rvm" ]] && source "/Users/chineseroommate/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
