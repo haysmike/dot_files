@@ -23,6 +23,7 @@ alias ...='cd ../..'
 if [[ -n $(whence git) ]]; then
   alias s='git status'
   alias d='git diff'
+  alias ds='git diff --staged'
 fi
 
 # path

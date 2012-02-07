@@ -1,9 +1,13 @@
-begin
+if RUBY_VERSION == "1.8.7"
+  system("[[ ! -e .irb_history ]] && echo > .irb_history")
   load '/etc/irbrc'
-  require 'wirble'
+end
 
-  Wirble.init
+begin
+  require 'wirble'
+  Wirble.init :skip_history => true
   Wirble.colorize
 rescue LoadError => err
-  $stderr.puts "Couldn't load Wirble: #{err}"
+  $stderr.puts err
 end
+
