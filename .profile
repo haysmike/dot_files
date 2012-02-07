@@ -26,3 +26,4 @@ alias d='git diff'
 # path
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
 
+[[ -s "/Users/chineseroommate/.rvm/scripts/rvm" ]] && source "/Users/chineseroommate/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

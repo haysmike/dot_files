@@ -3,6 +3,11 @@ set nocompatible
 set nowrap
 set backspace=2
 
+" shh
+set noerrorbells
+set visualbell
+set t_vb=
+
 " tabs!
 set expandtab
 set tabstop=2
@@ -16,6 +21,10 @@ set shiftround
 set number
 set ruler
 set ls=2
+
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 " colors!!!
 syntax on
@@ -36,7 +45,9 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 let mapleader = ","
 let g:mapleader = ","
 
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
+" wait what
+if has("gui_running")
+  set guifont=Menlo:h13
+  let g:Powerline_symbols = 'fancy'
+endif
 

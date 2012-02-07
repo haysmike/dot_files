@@ -28,5 +28,8 @@ setopt hist_expire_dups_first
 setopt hist_ignore_space
 setopt hist_no_store
 
+# slashes aren't words
+export WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
+
 source $HOME/.profile
 
