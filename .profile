@@ -13,21 +13,26 @@ export EDITOR='vim'
 
 # aliases
 alias ll='ls -lAh'
+alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
 
 # tcl
-[[ -n $(whence rlwrap) ]] && alias tclsh='rlwrap tclsh'
+if type rlwrap > /dev/null 2>&1; then
+  alias tclsh='rlwrap tclsh'
+fi
 
 # git
-if [[ -n $(whence git) ]]; then
+if type git > /dev/null 2>&1; then
   alias s='git status'
   alias d='git diff'
   alias ds='git diff --staged'
 fi
 
 # path
-[[ -n $(whence brew) ]] && export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
+if type brew > /dev/null 2>&1; then
+  export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
+fi
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
