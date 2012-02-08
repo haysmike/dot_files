@@ -46,5 +46,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 let mapleader = ","
 let g:mapleader = ","
 
-let g:Powerline_symbols = 'fancy'
-
+if has("gui_running")
+  let g:Powerline_symbols = 'fancy'
+endif
