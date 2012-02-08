@@ -5,8 +5,15 @@ setopt no_beep
 
 # prompt
 autoload -U colors && colors
-PS1="%n@%m %F{cyan}%~%f %(?..%F{red})%#%f "
+setopt prompt_subst
+PS1='%n@%m %F{cyan}%~%f '
 RPS1="%t"
+
+if type git > /dev/null 2>&1; then
+  PS1=$PS1'$($HOME/.zshgit)'
+fi
+
+PS1=$PS1'%(?..%F{red})%#%f '
 
 # key bindings
 bindkey "\e[1~" beginning-of-line
