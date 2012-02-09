@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+git_dir() {
+  git rev-parse --git-dir >/dev/null 2>&1
+}
+
+git_branch() {
+  ref=$(git symbolic-ref HEAD 2>/dev/null)
+  echo "${ref#refs/heads/}"
+}
+
+git_status() {
+  git status -s 2>/dev/null
+}
+
+if git_dir; then
+  echo -n " "
+  if [[ -z $(git_status) ]]; then
+    echo -n "%F{green}"
+  else
+    echo -n "%F{yellow}"
+  fi
+  echo -n "($(git_branch))%f"
+fi
+echo " "
+

@@ -6,16 +6,11 @@ setopt no_beep
 # prompt
 autoload -U colors && colors
 setopt prompt_subst
-PS1='%n@%m %F{cyan}%~%f '
-RPS1="%t"
-
-if type git > /dev/null 2>&1; then
-  PS1=$PS1'$($HOME/.zshgit)'
-fi
-
-PS1=$PS1'%(?..%F{red})%#%f '
+PS1='%n@%m %F{cyan}%~%f$($HOME/.zsh/git-prompt)%(?..%F{red})%#%f '
+RPS1='%t'
 
 # key bindings
+bindkey -e
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[2~" quoted-insert
 bindkey "\e[3~" delete-char
@@ -26,9 +21,9 @@ bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
 # history
-export HISTSIZE=2000
-export SAVEHIST=$HISTSIZE
-export HISTFILE=~/.zsh_history
+HISTSIZE=2000
+SAVEHIST=$HISTSIZE
+HISTFILE=$HOME/.zsh_history
 setopt append_history
 setopt hist_ignore_all_dups
 setopt hist_expire_dups_first
@@ -36,7 +31,7 @@ setopt hist_ignore_space
 setopt hist_no_store
 
 # slashes aren't words
-export WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
+WORDCHARS=''
 
 source $HOME/.profile
 
