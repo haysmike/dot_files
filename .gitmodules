@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/Command-T"]
 	path = .vim/bundle/Command-T
 	url = git://github.com/wincent/Command-T.git
-[submodule ".vim/bundle/vim-molokai"]
-	path = .vim/bundle/vim-molokai
-	url = git://github.com/cschlueter/vim-molokai.git
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
