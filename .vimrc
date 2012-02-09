@@ -46,6 +46,9 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 let mapleader = ","
 let g:mapleader = ","
 
+" disable auto-comment
+autocmd FileType * setlocal formatoptions-=cro
+
 if has("gui_running")
   let g:Powerline_symbols = 'fancy'
 endif
