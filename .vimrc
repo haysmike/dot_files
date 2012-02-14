@@ -52,3 +52,4 @@ autocmd FileType * setlocal formatoptions-=cro
 if has("gui_running")
   let g:Powerline_symbols = 'fancy'
 endif
+
