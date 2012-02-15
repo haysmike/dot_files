@@ -48,6 +48,7 @@ let g:mapleader = ","
 
 " disable auto-comment
 autocmd FileType * setlocal formatoptions-=cro
+let g:NERDSpaceDelims = 1
 
 if has("gui_running")
   let g:Powerline_symbols = 'fancy'
