@@ -14,13 +14,10 @@ git_status() {
 }
 
 if git_dir; then
-  echo -n " "
   if [[ -z $(git_status) ]]; then
-    echo -n "%F{green}"
+    echo -n "%F{green}($(git_branch))%f "
   else
-    echo -n "%F{yellow}"
+    echo -n "%F{yellow}($(git_branch))%f "
   fi
-  echo -n "($(git_branch))%f"
 fi
-echo " "
 

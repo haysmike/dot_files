@@ -6,8 +6,8 @@ setopt no_beep
 # prompt
 autoload -U colors && colors
 setopt prompt_subst
-PS1='%n@%m %F{cyan}%~%f$($HOME/.zsh/git-prompt)%(?..%F{red})%#%f '
-RPS1='%t'
+PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})%#%f '
+RPS1='$($HOME/.zsh/rvm-prompt)%t'
 
 # key bindings
 bindkey -e

@@ -1,4 +1,4 @@
-if ENV["rvm_path"].nil?
+if ENV["rvm_env_string"].nil?
   system("[[ ! -e ~/.irb_history ]] && echo > ~/.irb_history")
   load '/etc/irbrc'
 end
