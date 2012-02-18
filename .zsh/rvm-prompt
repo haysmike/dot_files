@@ -1,9 +1,12 @@
 #!/bin/zsh
 
 if [[ -n $GEM_HOME ]] ; then
-  if [[ -n $rvm_env_string ]]; then
-    echo -n "%B%F{black}($rvm_env_string)%f%b "
+  if [[ ! -s $GEM_HOME ]] ; then
+    echo -n "%F{red}(${GEM_HOME#$HOME/.rvm/gems/})%f "
+  elif [[ -n $rvm_ruby_string ]] ; then
+    echo -n "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f "
   else
     echo -n "%F{yellow}(${GEM_HOME#$HOME/.rvm/gems/})%f "
   fi
 fi
+
