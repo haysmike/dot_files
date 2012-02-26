@@ -3,10 +3,7 @@
 if [[ -n $GEM_HOME ]] ; then
   if [[ ! -s $GEM_HOME ]] ; then
     echo -n "%F{red}(${GEM_HOME#$HOME/.rvm/gems/})%f "
-  elif [[ -n $rvm_ruby_string ]] ; then
-    echo -n "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f%b "
   else
-    echo -n "%F{yellow}(${GEM_HOME#$HOME/.rvm/gems/})%f "
+    echo -n "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f%b "
   fi
 fi
-
