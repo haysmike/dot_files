@@ -54,3 +54,7 @@ if has("gui_running")
   let g:Powerline_symbols = 'fancy'
 endif
 
+" mouse/clipboard integration
+set mouse=a
+set clipboard=unnamed
+
