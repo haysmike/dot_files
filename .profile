@@ -16,6 +16,13 @@ alias ll='ls -lAh'
 alias -- -='cd -'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+alias o='open -a'
 
 # tcl
 if type rlwrap > /dev/null 2>&1; then
@@ -31,9 +38,15 @@ fi
 
 # path
 if type brew > /dev/null 2>&1; then
-  export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'
+  export PATH=/usr/local/bin:$PATH
+fi
+
+if [ -d "/Applications/Android Studio.app" ]; then
+  export PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools:/Applications/Android\ Studio.app/sdk/platform-tools
 fi
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+  source "$HOME/.rvm/scripts/rvm"
+fi
 
