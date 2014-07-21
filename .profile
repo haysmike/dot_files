@@ -36,17 +36,19 @@ if type git > /dev/null 2>&1; then
   alias ds='git diff --staged'
 fi
 
-# path
+# prepend homebrew path
 if type brew > /dev/null 2>&1; then
-  export PATH=/usr/local/bin:$PATH
+  export PATH="/usr/local/bin:$PATH"
 fi
 
+# android
 if [ -d "/Applications/Android Studio.app" ]; then
-  export PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools:/Applications/Android\ Studio.app/sdk/platform-tools
+  export PATH="$PATH:/Applications/Android Studio.app/sdk/tools:/Applications/Android Studio.app/sdk/platform-tools"
 fi
 
 # rvm
-if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+if [ -d "$HOME/.rvm" ]; then
   source "$HOME/.rvm/scripts/rvm"
+  # export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
