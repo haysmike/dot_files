@@ -33,5 +33,8 @@ setopt hist_no_store
 # slashes aren't words
 WORDCHARS=''
 
+# comments are ok
+setopt interactivecomments
+
 source $HOME/.profile
 
