@@ -1,32 +1,23 @@
-OS X Terminal config files for Lion (xterm-256color).
-
-I just create symlinks to these files from my $HOME directory ("ln -s $HOME/code/dot_files/.inputrc ~" for example).
-
-Terminal key setup (this makes bash, vim, and irssi work how I like):
-
-  end               \033[4~
-  home              \033[1~
-  page down         \033[6~
-  page up           \033[5~
-
-  ctrl page up      \033[5;5~
-  control page down \033[6;5~
-
-  shift end         scroll to end of buffer
-  shift home        scroll to beginning of buffer
-  shift page down   scroll to next page in buffer
-  shift page up     scroll to previous page in buffer
-
-I also turn "Use option as meta key" on - the default meta key is the escape key.
-
-Another possibility is to use \033[F for end and \033[H for home, and add something like the following to your .vimrc:
-
-  nmap <esc>[H 0
-  imap <esc>[H <esc>I
-  cmap <esc>[H <home>
-  nmap <esc>[F $
-  imap <esc>[F <esc>A
-  cmap <esc>[F <end>
-
-Using .inputrc seemed cleaner.
+# usage:
+cd code
+git clone git@github.com:murkey/dot_files.git
+cd dot_files
+git submodule init
+git submodule update
+cd .vim/bundle/Command-T/ruby/command-t
+ruby extconf.rb
+make
+cd $HOME
+ln -s $HOME/code/dot_files/.ackrc .
+ln -s $HOME/code/dot_files/.bash_profile .
+ln -s $HOME/code/dot_files/.bashrc .
+ln -s $HOME/code/dot_files/.gemrc .
+ln -s $HOME/code/dot_files/.gitignore .
+ln -s $HOME/code/dot_files/.gitmodules .
+ln -s $HOME/code/dot_files/.gvimrc .
+ln -s $HOME/code/dot_files/.profile .
+ln -s $HOME/code/dot_files/.vim .
+ln -s $HOME/code/dot_files/.vimrc .
+ln -s $HOME/code/dot_files/.zsh .
+ln -s $HOME/code/dot_files/.zshrc .
 
