@@ -53,3 +53,10 @@ autocmd FileType * setlocal formatoptions-=cro
 set mouse=a
 set clipboard=unnamed
 
+" auto-flush command-t
+augroup CommandT
+  autocmd!
+  autocmd FocusGained * CommandTFlush
+  autocmd BufWritePost * CommandTFlush
+augroup END
+
