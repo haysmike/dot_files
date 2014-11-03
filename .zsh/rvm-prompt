@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-if [[ -n $GEM_HOME ]] ; then
-  if [[ ! -s $GEM_HOME ]] ; then
+if [[ -n $GEM_HOME ]]; then
+  if [[ ! -s $GEM_HOME ]]; then
     echo -n "%F{red}(${GEM_HOME#$HOME/.rvm/gems/})%f "
   else
     echo -n "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f%b "

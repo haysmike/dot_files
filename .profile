@@ -46,9 +46,7 @@ if [ -d "/Applications/Android Studio.app" ]; then
   export PATH="$PATH:/Applications/Android Studio.app/sdk/tools:/Applications/Android Studio.app/sdk/platform-tools"
 fi
 
-# rvm
-if [ -d "$HOME/.rvm" ]; then
-  source "$HOME/.rvm/scripts/rvm"
-  # export PATH="$PATH:$HOME/.rvm/bin"
+# rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  eval "$(rbenv init -)"
 fi
-

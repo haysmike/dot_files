@@ -7,7 +7,7 @@ setopt no_beep
 autoload -U colors && colors
 setopt prompt_subst
 PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})%#%f '
-RPS1='$($HOME/.zsh/rvm-prompt)%t'
+RPS1='$($HOME/.zsh/rbenv-prompt)%t'
 
 # key bindings
 bindkey -e
@@ -37,4 +37,3 @@ WORDCHARS=''
 setopt interactivecomments
 
 source $HOME/.profile
-

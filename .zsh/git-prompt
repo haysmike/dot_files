@@ -13,7 +13,7 @@ git_status() {
   git status -s 2>/dev/null
 }
 
-if git_dir; then
+if git_dir ; then
   if [[ -z $(git_status) ]]; then
     echo -n "%F{green}($(git_branch))%f "
   else
