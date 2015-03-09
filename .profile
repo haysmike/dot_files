@@ -22,11 +22,20 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
+alias f='find . -iname'
 alias o='open -a'
 
-# tcl
-if type rlwrap > /dev/null 2>&1; then
-  alias tclsh='rlwrap tclsh'
+# git
+if type git > /dev/null 2>&1; then
+  alias s='git status'
+  alias d='git diff'
+  alias ds='git diff --staged'
+  alias ff='git merge --ff-only'
+fi
+
+# homebrew
+if type brew > /dev/null 2>&1; then
+  export PATH="/usr/local/bin:$PATH"
 fi
 
 # git
@@ -34,15 +43,11 @@ if type git > /dev/null 2>&1; then
   alias s='git status'
   alias d='git diff'
   alias ds='git diff --staged'
-fi
-
-# prepend homebrew path
-if type brew > /dev/null 2>&1; then
-  export PATH="/usr/local/bin:$PATH"
+  alias ff='git merge --ff-only'
 fi
 
 # android
-if [ -d "/Applications/Android Studio.app" ]; then
+if [ -d '/Applications/Android Studio.app' ]; then
   export PATH="$PATH:/Applications/Android Studio.app/sdk/tools:/Applications/Android Studio.app/sdk/platform-tools"
 fi
 

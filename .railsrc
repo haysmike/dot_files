@@ -1,0 +1,6 @@
+--skip-bundle
+--skip-keeps
+--database=postgres
+--skip-turbolinks
+--skip-test-unit
+

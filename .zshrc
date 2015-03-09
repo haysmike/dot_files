@@ -36,4 +36,4 @@ WORDCHARS=''
 # comments are ok
 setopt interactivecomments
 
-source $HOME/.profile
+. $HOME/.profile
