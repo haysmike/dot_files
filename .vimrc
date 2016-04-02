@@ -53,6 +53,9 @@ autocmd FileType * setlocal formatoptions-=cro
 set mouse=a
 set clipboard=unnamed
 
+" autosave
+autocmd FocusLost * :wa
+
 " auto-flush command-t
 augroup CommandT
   autocmd!

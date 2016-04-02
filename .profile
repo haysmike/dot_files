@@ -48,10 +48,11 @@ fi
 
 # android
 if [ -d '/Applications/Android Studio.app' ]; then
-  export PATH="$PATH:/Applications/Android Studio.app/sdk/tools:/Applications/Android Studio.app/sdk/platform-tools"
+  export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
 fi
 
 # rbenv
 if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
+
