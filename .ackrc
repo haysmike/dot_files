@@ -3,4 +3,3 @@
 --pager=less
 --type-add=html:ext:haml
 --type-add=css:ext:sass,scss
-

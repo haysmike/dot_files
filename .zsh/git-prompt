@@ -20,4 +20,3 @@ if git_dir ; then
     echo -n "%F{yellow}($(git_branch))%f "
   fi
 fi
-

@@ -3,4 +3,3 @@
 --database=postgresql
 --skip-turbolinks
 --skip-test-unit
-
