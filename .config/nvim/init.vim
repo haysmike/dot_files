@@ -1,9 +1,7 @@
-set nocompatible
-
 " plug
 filetype off
 call plug#begin('~/.vim/bundle')
-Plug 'wincent/command-t', { 'do': 'cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make' }
+Plug 'junegunn/fzf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
@@ -61,13 +59,9 @@ set clipboard=unnamed
 " autosave
 autocmd FocusLost * :wa
 
-" command-t
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-augroup CommandT
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+nmap <leader>t :FZF<CR>
 
 " lightline
 let g:lightline = {
