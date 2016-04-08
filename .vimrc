@@ -62,7 +62,6 @@ set clipboard=unnamed
 autocmd FocusLost * :wa
 
 " command-t
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
 augroup CommandT
   autocmd!
   autocmd FocusGained * CommandTFlush
