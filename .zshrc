@@ -37,3 +37,4 @@ WORDCHARS=''
 setopt interactivecomments
 
 . $HOME/.profile
+

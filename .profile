@@ -31,6 +31,7 @@ if type git > /dev/null 2>&1; then
   alias d='git diff'
   alias ds='git diff --staged'
   alias ff='git merge --ff-only'
+  alias p='git pull'
 fi
 
 # homebrew
@@ -44,6 +45,11 @@ if type git > /dev/null 2>&1; then
   alias d='git diff'
   alias ds='git diff --staged'
   alias ff='git merge --ff-only'
+fi
+
+# neovim
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
 fi
 
 # android
