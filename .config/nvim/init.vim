@@ -63,10 +63,11 @@ set clipboard=unnamed
 autocmd FocusLost * :wa
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+let $FZF_DEFAULT_COMMAND = "ag --hidden --ignore-dir .git --ignore '*.meta' -g ''"
 nmap <leader>t :FZF<CR>
 
 " lightline
 let g:lightline = {
   \   'colorscheme': 'jellybeans'
   \ }
+set noshowmode
