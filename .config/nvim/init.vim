@@ -17,7 +17,6 @@ set backspace=2
 " shh
 set noerrorbells
 set visualbell
-set t_vb=
 
 " tabs!
 set expandtab
@@ -45,6 +44,9 @@ set ignorecase
 set smartcase
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" netrw
+let g:netrw_liststyle = 3
 
 " leader
 let mapleader = ','
