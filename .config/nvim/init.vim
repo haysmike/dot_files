@@ -71,3 +71,9 @@ let g:lightline = {
   \   'colorscheme': 'jellybeans'
   \ }
 set noshowmode
+
+" source vimrc on save
+augroup auto_source_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
