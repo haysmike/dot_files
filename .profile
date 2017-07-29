@@ -9,7 +9,7 @@ export LESS='-iRX'
 export GREP_OPTIONS='--color=auto'
 
 # default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # aliases
 alias ll='ls -lAh'
