@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'zhaocai/GoldenView.Vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " general
@@ -45,9 +46,6 @@ set smartcase
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" netrw
-let g:netrw_liststyle = 3
-
 " leader
 let mapleader = ','
 let g:mapleader = ','
@@ -71,6 +69,10 @@ let g:lightline = {
   \   'colorscheme': 'jellybeans'
   \ }
 set noshowmode
+
+" NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
 " source vimrc on save
 augroup auto_source_vimrc
