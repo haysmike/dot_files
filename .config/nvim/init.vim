@@ -33,7 +33,7 @@ set ruler
 set ls=2
 
 " colors!!!
-syntax on
+syntax enable
 filetype plugin indent on
 set cursorline
 set background=dark
