@@ -73,6 +73,8 @@ set noshowmode
 " NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
+set splitright
+nmap <leader>b :NERDTreeToggle<CR>
 
 " source vimrc on save
 augroup auto_source_vimrc
