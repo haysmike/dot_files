@@ -33,6 +33,9 @@ setopt hist_no_store
 # slashes aren't words
 WORDCHARS=''
 
+# spaces are ok for | and &
+ZLE_REMOVE_SUFFIX_CHARS=' \t\n'
+
 # comments are ok
 setopt interactivecomments
 
