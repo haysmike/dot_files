@@ -34,9 +34,11 @@ set ruler
 set ls=2
 
 " colors!!!
+set termguicolors
 syntax enable
 filetype plugin indent on
 set cursorline
+set cursorcolumn
 set background=dark
 colorscheme jellybeans
 
@@ -58,7 +60,7 @@ set mouse=a
 set clipboard=unnamed
 
 " autosave
-autocmd FocusLost * :wa
+autocmd FocusLost * wall
 
 " fzf
 let $FZF_DEFAULT_COMMAND = "ag --hidden --ignore-dir .git --ignore '*.meta' -g ''"
