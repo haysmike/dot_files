@@ -39,14 +39,6 @@ if type brew > /dev/null 2>&1; then
   export PATH="/usr/local/bin:$PATH"
 fi
 
-# git
-if type git > /dev/null 2>&1; then
-  alias s='git status'
-  alias d='git diff'
-  alias ds='git diff --staged'
-  alias ff='git merge --ff-only'
-fi
-
 # neovim
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
