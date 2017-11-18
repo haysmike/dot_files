@@ -27,16 +27,27 @@ alias o='open -a'
 
 # git
 if type git > /dev/null 2>&1; then
-  alias s='git status'
+  alias g='git'
+  alias s='git status --show-stash'
+  alias sp='git show -p'
+  alias l='git log --stat'
+  alias lg='git log --oneline --graph'
   alias d='git diff'
   alias ds='git diff --staged'
+  alias co='git checkout'
+  alias a='git add'
+  alias an='git add -N'
+  alias ap='git add -p'
+  alias cv='git commit -v'
+  alias cn='git commit --amend --no-edit'
   alias ff='git merge --ff-only'
   alias p='git pull'
+  alias pu='git push -u'
 fi
 
 # homebrew
 if type brew > /dev/null 2>&1; then
-  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 # neovim
