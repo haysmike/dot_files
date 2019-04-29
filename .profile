@@ -49,6 +49,11 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+# ag
+if type ag > /dev/null 2>&1; then
+  alias ag='ag -C2 --ignore-dir .git --ignore-dir build --ignore-dir node_modules --pager less'
+fi
+
 # android
 if [ -d '/Applications/Android Studio.app' ]; then
   export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
