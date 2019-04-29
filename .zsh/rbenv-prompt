@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 rbenv_status() {
   rbenv local 2>/dev/null

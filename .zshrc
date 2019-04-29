@@ -6,8 +6,8 @@ setopt no_beep
 # prompt
 autoload -U colors && colors
 setopt prompt_subst
-PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})%#%f '
-RPS1='$($HOME/.zsh/rbenv-prompt)%t'
+PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})♪%f '
+RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%t'
 
 # key bindings
 bindkey -e
@@ -34,7 +34,8 @@ setopt hist_no_store
 WORDCHARS=''
 
 # spaces are ok for | and &
-ZLE_REMOVE_SUFFIX_CHARS=' \t\n'
+# ZLE_REMOVE_SUFFIX_CHARS=' \t\n'
+ZLE_SPACE_SUFFIX_CHARS=$'&|'
 
 # comments are ok
 setopt interactivecomments

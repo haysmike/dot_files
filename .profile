@@ -23,28 +23,25 @@ alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias f='find . -iname'
-alias o='open -a'
 
 # git
 if type git > /dev/null 2>&1; then
-  alias s='git status'
+  alias g='git'
+  alias s='git status --show-stash --untracked-files=all'
+  alias l='git log --stat'
+  alias lg='git log --oneline --graph'
   alias d='git diff'
   alias ds='git diff --staged'
-  alias ff='git merge --ff-only'
+  alias co='git checkout'
   alias p='git pull'
+  alias ff='git merge --ff-only'
+  alias a='git add'
+  alias cv='git commit -v'
 fi
 
 # homebrew
 if type brew > /dev/null 2>&1; then
   export PATH="/usr/local/bin:$PATH"
-fi
-
-# git
-if type git > /dev/null 2>&1; then
-  alias s='git status'
-  alias d='git diff'
-  alias ds='git diff --staged'
-  alias ff='git merge --ff-only'
 fi
 
 # neovim
@@ -57,7 +54,24 @@ if [ -d '/Applications/Android Studio.app' ]; then
   export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
 fi
 
+# yarn
+if type yarn > /dev/null 2>&1; then
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  alias y='yarn'
+fi
+
+# nodenv
+if type nodenv > /dev/null 2>&1; then
+  eval "$(nodenv init -)"
+  export PATH="./node_modules/.bin:$PATH"
+fi
+
 # rbenv
-if [ -d "$HOME/.rbenv" ]; then
+if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
+fi
+
+# pyenv
+if type pyenv > /dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
