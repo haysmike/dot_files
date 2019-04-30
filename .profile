@@ -49,9 +49,9 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-# ag
-if type ag > /dev/null 2>&1; then
-  alias ag='ag -C2 --ignore-dir .git --ignore-dir build --ignore-dir node_modules --pager less'
+# rg
+if type rg > /dev/null 2>&1; then
+  alias rg='rg --smart-case --hidden -B2 -A2 --pretty'
 fi
 
 # android
