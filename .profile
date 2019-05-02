@@ -2,8 +2,8 @@
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
 
-# case insensitve searching, handle color, keep output on screen
-export LESS='-iRX'
+# smart-case searching, verbose prompt, handle ANSI color characters, keep output on screen
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init'
 
 # color grep matches
 export GREP_OPTIONS='--color=auto'
