@@ -68,6 +68,8 @@ fi
 link_dottile .profile
 link_dottile .zsh
 link_dottile .zshrc
+# note: .gitignore must whitelist subtrees
+link_dottile .config
 
 echo
 echo 'Switching to zsh...'

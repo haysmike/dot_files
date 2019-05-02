@@ -1,6 +1,5 @@
 .DS_Store
-*.old
 .vim/bundle/
-.config/configstore/
-.config/hub
-.config/yarn/
+.config/*
+!.config/git
+!.config/nvim
