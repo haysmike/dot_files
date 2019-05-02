@@ -14,6 +14,8 @@ defaults write com.apple.HIToolbox AppleDictationAutoEnable -int '0'
 # Show all files
 defaults write com.apple.finder AppleShowAllFiles -bool 'YES'
 
+# Normal key repeat
+defaults write -g ApplePressAndHoldEnabled -bool 'NO'
 
 echo
 echo 'Installing Homebrew...'
