@@ -28,7 +28,22 @@ PATH=/usr/local/bin:$PATH
 echo
 echo 'Installing command-line utilities...'
 brew install git
-brew install zsh neovim ag pgrep pkill hub
+brew install zsh neovim ripgrep pgrep pkill hub jq
+
+# need 1password installed to log into github before setting up ssh keys
+echo
+echo 'Installing apps...'
+cask_install () {
+  brew cask install $1 || echo
+}
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+brew tap caskroom/cask
+cask_install 1password
+cask_install iterm2
+cask_install visual-studio-code
+cask_install google-chrome
+cask_install firefox
+cask_install slack
 
 echo 'Creating SSH key...'
 if ! [ -f ~/.ssh/id_rsa.pub ]; then
@@ -61,18 +76,6 @@ if ! grep --fixed-strings $zsh_path < /etc/shells; then
   sudo --preserve-env bash -c "echo $zsh_path >> /etc/shells"
 fi
 sudo chsh -s $zsh_path $USER
-
-echo
-echo 'Installing apps...'
-cask_install () {
-  brew cask install $1 || echo
-}
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-brew tap caskroom/cask
-cask_install iterm2
-cask_install google-chrome
-cask_install visual-studio-code
-cask_install slack
 
 sudo softwareupdate --install --all --restart
 
