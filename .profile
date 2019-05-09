@@ -70,13 +70,13 @@ fi
 # yarn
 if type yarn > /dev/null 2>&1; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  export PATH="./node_modules/.bin:$PATH"
   alias y='yarn'
 fi
 
 # nodenv
 if type nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
-  export PATH="./node_modules/.bin:$PATH"
 fi
 
 # rbenv
