@@ -2,8 +2,9 @@
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
 
-# smart-case searching, verbose prompt, handle ANSI color characters, keep output on screen
-export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init'
+# smart-case searching, verbose prompt, handle ANSI color characters, keep
+# output on screen, exit if entire file can be displayed on single screen
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init --quit-if-one-screen'
 
 # color grep matches
 export GREP_OPTIONS='--color=auto'
@@ -51,7 +52,14 @@ fi
 
 # rg
 if type rg > /dev/null 2>&1; then
-  alias rg='rg --smart-case --hidden -B2 -A2 --pretty'
+  # https://github.com/BurntSushi/ripgrep/issues/86
+  rg() {
+    if [ -t 1 ]; then
+      command rg --smart-case --hidden -B2 -A2 --pretty "$@" | less
+    else
+      command rg "$@"
+    fi
+  }
 fi
 
 # android
