@@ -9,6 +9,11 @@ setopt prompt_subst
 PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})♪%f '
 RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%t'
 
+# set the title
+precmd () {
+  print -Pn - '\e]0;%~\a'
+}
+
 # key bindings
 bindkey -e
 bindkey "\e[1~" beginning-of-line
