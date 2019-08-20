@@ -2,9 +2,8 @@
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
 
-# smart-case searching, verbose prompt, handle ANSI color characters, keep
-# output on screen, exit if entire file can be displayed on single screen
-export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init --quit-if-one-screen'
+# smart-case searching, verbose prompt, handle ANSI color characters, keep output on screen
+export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init'
 
 # color grep matches
 export GREP_OPTIONS='--color=auto'
@@ -28,16 +27,17 @@ alias f='find . -iname'
 # git
 if type git > /dev/null 2>&1; then
   alias g='git'
-  alias s='git status --show-stash --untracked-files=all'
-  alias l='git log --stat'
-  alias lg='git log --oneline --graph'
+
+  alias a='git add'
+  alias ci='git commit'
+  alias co='git checkout'
   alias d='git diff'
   alias ds='git diff --staged'
-  alias co='git checkout'
-  alias p='git pull'
   alias ff='git merge --ff-only'
-  alias a='git add'
-  alias cv='git commit -v'
+  alias l='git log --stat'
+  alias lg='git log --oneline --graph'
+  alias p='git pull'
+  alias s='git status --show-stash --untracked-files=all'
 fi
 
 # homebrew

@@ -1,14 +1,4 @@
 # usage:
 cd code
 git clone git@github.com:murkey/dot_files.git
-cd
-ln -s $HOME/code/dot_files/.ackrc .
-ln -s $HOME/code/dot_files/.gemrc .
-ln -s $HOME/code/dot_files/.gitignore .
-ln -s $HOME/code/dot_files/.gitmodules .
-ln -s $HOME/code/dot_files/.gvimrc .
-ln -s $HOME/code/dot_files/.profile .
-ln -s $HOME/code/dot_files/.vim .
-ln -s $HOME/code/dot_files/.vimrc .
-ln -s $HOME/code/dot_files/.zsh .
-ln -s $HOME/code/dot_files/.zshrc .
+./setup.sh

@@ -28,7 +28,7 @@ PATH=/usr/local/bin:$PATH
 echo
 echo 'Installing command-line utilities...'
 brew install git
-brew install zsh neovim ripgrep pgrep pkill hub jq
+brew install zsh neovim ripgrep pgrep pkill hub jq rmtrash
 
 # need 1password installed to log into github before setting up ssh keys
 echo
