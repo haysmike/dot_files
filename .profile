@@ -8,9 +8,6 @@ export LESS='--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --no-init'
 # color grep matches
 export GREP_OPTIONS='--color=auto'
 
-# default editor
-export EDITOR='nvim'
-
 # aliases
 alias ll='ls -lAh'
 alias -- -='cd -'
@@ -47,6 +44,9 @@ fi
 # neovim
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
 fi
 
 # ripgrep
