@@ -22,7 +22,6 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
-alias f='find . -iname'
 
 # git
 if type git > /dev/null 2>&1; then
@@ -50,7 +49,7 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-# rg
+# ripgrep
 if type rg > /dev/null 2>&1; then
   # https://github.com/BurntSushi/ripgrep/issues/86
   rg() {
@@ -60,6 +59,9 @@ if type rg > /dev/null 2>&1; then
       command rg "$@"
     fi
   }
+  alias f='rg --files --iglob'
+else
+  alias f='find . -iname'
 fi
 
 # android
