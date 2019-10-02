@@ -57,7 +57,7 @@ fi
 
 echo
 echo 'Installing dot files...'
-link_dottile () {
+link_dotfile () {
   if [[ ! -e "$1" ]]; then
     ln -s "$HOME/code/dot_files/$1" "$HOME"
   fi
@@ -65,11 +65,12 @@ link_dottile () {
 if ! [ -d $HOME/code/dot_files ]; then
   git clone git@github.com:murkey/dot_files.git $HOME/code/dot_files
 fi
-link_dottile .profile
-link_dottile .zsh
-link_dottile .zshrc
+link_dotfile .profile
+link_dotfile .zsh
+link_dotfile .zshrc
 # note: .gitignore must whitelist subtrees
-link_dottile .config
+link_dotfile .config
+link_dotfile .psqlrc
 
 echo
 echo 'Switching to zsh...'
