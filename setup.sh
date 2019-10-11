@@ -42,6 +42,7 @@ cask_install visual-studio-code
 cask_install google-chrome
 cask_install firefox
 cask_install slack
+cask_install docker
 
 echo 'Creating SSH key...'
 if ! [ -f ~/.ssh/id_rsa.pub ]; then
