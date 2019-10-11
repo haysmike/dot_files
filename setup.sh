@@ -36,8 +36,6 @@ echo 'Installing apps...'
 cask_install () {
   brew cask install $1 || echo
 }
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-brew tap caskroom/cask
 cask_install 1password
 cask_install iterm2
 cask_install visual-studio-code
