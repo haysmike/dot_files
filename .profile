@@ -80,6 +80,11 @@ if type nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 
+# node-build-update-defs
+if [ -d '/usr/local/opt/node-build-update-defs/share/node-build' ] > /dev/null 2>&1; then
+  export NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
+fi
+
 # needs to come after yarn/nodenv config
 # TODO should probably check for node/npm/yarn....?
 export PATH="./node_modules/.bin:$PATH"
