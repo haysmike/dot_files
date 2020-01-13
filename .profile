@@ -72,7 +72,6 @@ fi
 # yarn
 if type yarn > /dev/null 2>&1; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-  export PATH="./node_modules/.bin:$PATH"
   alias y='yarn'
 fi
 
@@ -80,6 +79,10 @@ fi
 if type nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
+
+# needs to come after yarn/nodenv config
+# TODO should probably check for node/npm/yarn....?
+export PATH="./node_modules/.bin:$PATH"
 
 # rbenv
 if type rbenv > /dev/null 2>&1; then
