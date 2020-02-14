@@ -6,8 +6,10 @@ setopt no_beep
 # prompt
 autoload -U colors && colors
 setopt prompt_subst
+# Any functions/scripts called here must include a trailing space for padding.
+# This avoids multiple spaces when one or more scripts returns nothing.
 PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})♪%f '
-RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%t'
+RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%D{%L:%M%p %Z}'
 
 # set the title
 precmd () {
