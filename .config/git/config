@@ -1,0 +1,9 @@
+[user]
+	name = murkey
+	email = haysmikethere@gmail.com
+[commit]
+	verbose = true
+[push]
+	followTags = true
+[log]
+	abbrevCommit = true
