@@ -31,7 +31,7 @@ bindkey "\e[F" end-of-line
 HISTSIZE=2000
 SAVEHIST=$HISTSIZE
 HISTFILE=$HOME/.zsh_history
-setopt append_history
+setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_expire_dups_first
 setopt hist_ignore_space
