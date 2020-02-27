@@ -79,7 +79,18 @@ if ! grep --fixed-strings $zsh_path < /etc/shells; then
 fi
 sudo chsh -s $zsh_path $USER
 
-read -p "Update and restart? [yN]" yn
+echo
+echo 'Setting up Visual Studio Code...'
+if ! type code > /dev/null 2>&1; then
+  echo $'INSTALL VISUAL STUDIO CODE\'s `code` COMMAND
+
+1. Open the Command Palette (Cmd+Shift+P and search for "install code command").
+2. Install the `code` command
+3. Close this file.' | '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --wait -
+fi
+'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --install-extension 'shan.code-settings-sync'
+
+read -p 'Update and restart [yN]? ' yn
 case $yn in
   [Yy]* ) sudo softwareupdate --install --all --restart; break;;
 esac
