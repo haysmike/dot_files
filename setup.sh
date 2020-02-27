@@ -62,7 +62,7 @@ fi
 echo
 echo 'Installing dot files...'
 link_dotfile () {
-  if [ ! -e "$1" ]; then
+  if ! [ -e "$HOME/$1" ]; then
     ln -s "$HOME/code/dot_files/$1" "$HOME"
   fi
 }
