@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-sudo --validate || sudo --prompt='Password: ' echo "Granted sudo access by $(whoami)"
+sudo --validate
 
 echo
 echo 'Setting preferences...'
@@ -108,4 +108,4 @@ case $yn in
   [Yy]* ) sudo softwareupdate --install --all --restart; break;;
 esac
 
-sudo -k
+sudo --reset-timestamp
