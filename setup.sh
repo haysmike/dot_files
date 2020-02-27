@@ -94,14 +94,14 @@ sudo chsh -s $zsh_path $USER
 
 echo
 echo 'Setting up Visual Studio Code...'
+'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --install-extension 'shan.code-settings-sync'
 if ! type code > /dev/null 2>&1; then
-  echo $'INSTALL VISUAL STUDIO CODE\'s `code` COMMAND
+  echo $'CONFIGURE VISUAL STUDIO CODE
 
-1. Open the Command Palette (Cmd+Shift+P and search for "install code command").
-2. Install the `code` command
+1. Use the command palette to install the `code` command (Cmd+Shift+P and search for "install code command")
+4. Use the command palette to download settings via the Settings Sync extension (search for "download settings")
 3. Close this file.' | '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --wait -
 fi
-'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --install-extension 'shan.code-settings-sync'
 
 read -p 'Update and restart [yN]? ' yn
 case $yn in
