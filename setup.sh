@@ -19,10 +19,10 @@ defaults write -g ApplePressAndHoldEnabled -bool 'NO'
 
 echo
 echo 'Installing Homebrew...'
-if ! which -s brew; then
+if ! command -v brew; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew doctor || read -p 'There are issues with `brew`. Press Enter to continue. '
+brew doctor || read -r -p 'There are issues with Homebrew. Please review and press Enter to continue. '
 PATH=/usr/local/bin:$PATH
 
 echo
@@ -36,7 +36,7 @@ echo 'Installing apps...'
 # `brew cask install` doesn't accept a list.
 cask_install () {
   if ! [ -e "/Applications/$2.app" ]; then
-    brew cask install $1 || echo
+    brew cask install "$1" || echo
   fi
 }
 # Install 1Password first since lots of things depend on it.
@@ -56,7 +56,7 @@ if ! [ -f ~/.ssh/id_rsa.pub ]; then
 
   echo 'New SSH public key copied. Add it to your account here: https://github.com/settings/keys.'
   open -a Firefox https://github.com/settings/keys
-  read -p 'Press Enter to continue. '
+  read -r -p 'Press Enter to continue. '
 fi
 
 echo
@@ -66,8 +66,8 @@ link_dotfile () {
     ln -s "$HOME/code/dot_files/$1" "$HOME"
   fi
 }
-if ! [ -d $HOME/code/dot_files ]; then
-  git clone git@github.com:murkey/dot_files.git $HOME/code/dot_files
+if ! [ -d "$HOME/code/dot_files" ]; then
+  git clone git@github.com:murkey/dot_files.git "$HOME/code/dot_files"
 fi
 link_dotfile .profile
 link_dotfile .zsh
@@ -81,7 +81,7 @@ zsh_path='/usr/local/bin/zsh'
 if ! grep --fixed-strings $zsh_path < /etc/shells; then
   sudo --preserve-env bash -c "echo $zsh_path >> /etc/shells"
 fi
-sudo chsh -s $zsh_path $USER
+sudo chsh -s $zsh_path "$USER"
 
 echo
 echo 'Setting up Visual Studio Code...'
@@ -94,9 +94,9 @@ if ! type code > /dev/null 2>&1; then
 3. Close this file.' | '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --wait -
 fi
 
-read -p 'Update and restart [yN]? ' yn
+read -r -p 'Update and restart [yN]? ' yn
 case $yn in
-  [Yy]* ) sudo softwareupdate --install --all --restart; break;;
+  [Yy]* ) sudo softwareupdate --install --all --restart;;
 esac
 
 sudo --reset-timestamp
