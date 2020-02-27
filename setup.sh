@@ -27,15 +27,15 @@ PATH=/usr/local/bin:$PATH
 
 echo
 echo 'Installing command-line utilities...'
-brew install git
-brew install zsh neovim ripgrep proctools hub jq rmtrash
+brew install git zsh neovim ripgrep proctools hub jq rmtrash shellcheck
 
-# need 1password installed to log into github before setting up ssh keys
 echo
 echo 'Installing apps...'
+# `brew cask install` doesn't accept a list.
 cask_install () {
   brew cask install $1 || echo
 }
+# Install 1Password first since lots of things depend on it.
 cask_install 1password
 cask_install iterm2
 cask_install visual-studio-code
@@ -67,7 +67,6 @@ fi
 link_dotfile .profile
 link_dotfile .zsh
 link_dotfile .zshrc
-# note: .gitignore must whitelist subtrees
 link_dotfile .config
 link_dotfile .psqlrc
 
@@ -79,6 +78,9 @@ if ! grep --fixed-strings $zsh_path < /etc/shells; then
 fi
 sudo chsh -s $zsh_path $USER
 
-sudo softwareupdate --install --all --restart
+read -p "Update and restart? [yN]" yn
+case $yn in
+  [Yy]* ) sudo softwareupdate --install --all --restart; break;;
+esac
 
 sudo -k
