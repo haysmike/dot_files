@@ -22,27 +22,40 @@ echo 'Installing Homebrew...'
 if ! which -s brew; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/install)" < $input
 fi
-brew doctor
+brew doctor || read -p 'There are issues with `brew`. Press Enter to continue. '
 PATH=/usr/local/bin:$PATH
 
 echo
 echo 'Installing command-line utilities...'
-brew install git zsh neovim ripgrep proctools hub jq rmtrash shellcheck
+brew_install () {
+  brew install $1 || brew upgrade $1
+}
+brew_install git
+brew_install zsh
+brew_install neovim
+brew_install ripgrep
+brew_install proctools
+brew_install hub
+brew_install jq
+brew_install rmtrash
+brew_install shellcheck
 
 echo
 echo 'Installing apps...'
 # `brew cask install` doesn't accept a list.
 cask_install () {
-  brew cask install $1 || echo
+  if ! [ -e "/Applications/$2.app" ]; then
+    brew cask install $1 || echo
+  fi
 }
 # Install 1Password first since lots of things depend on it.
-cask_install 1password
-cask_install iterm2
-cask_install visual-studio-code
-cask_install google-chrome
-cask_install firefox
-cask_install slack
-cask_install docker
+cask_install 1password '1Password 7' # Not sure how to maintain this version number :/
+cask_install iterm2 'iTerm'
+cask_install visual-studio-code 'Visual Studio Code'
+cask_install google-chrome 'Google Chrome'
+cask_install firefox 'Firefox'
+cask_install slack 'Slack'
+cask_install docker 'Docker'
 
 echo 'Creating SSH key...'
 if ! [ -f ~/.ssh/id_rsa.pub ]; then
@@ -52,13 +65,13 @@ if ! [ -f ~/.ssh/id_rsa.pub ]; then
 
   echo 'New SSH public key copied. Add it to your account here: https://github.com/settings/keys.'
   open -a Firefox https://github.com/settings/keys
-  read -p 'Press Enter to continue'
+  read -p 'Press Enter to continue. '
 fi
 
 echo
 echo 'Installing dot files...'
 link_dotfile () {
-  if [[ ! -e "$1" ]]; then
+  if [ ! -e "$1" ]; then
     ln -s "$HOME/code/dot_files/$1" "$HOME"
   fi
 }
