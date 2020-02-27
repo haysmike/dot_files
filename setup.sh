@@ -51,6 +51,7 @@ if ! [ -f ~/.ssh/id_rsa.pub ]; then
   pbcopy < ~/.ssh/id_rsa.pub
 
   echo 'New SSH public key copied. Add it to your account here: https://github.com/settings/keys.'
+  open -a Firefox https://github.com/settings/keys
   read -p 'Press Enter to continue'
 fi
 
