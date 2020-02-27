@@ -27,18 +27,9 @@ PATH=/usr/local/bin:$PATH
 
 echo
 echo 'Installing command-line utilities...'
-brew_install () {
-  brew install $1 || brew upgrade $1
-}
-brew_install git
-brew_install zsh
-brew_install neovim
-brew_install ripgrep
-brew_install proctools
-brew_install hub
-brew_install jq
-brew_install rmtrash
-brew_install shellcheck
+# Homebrew tries to update itself every time a command is run, so call as few times as possible
+brews=(git zsh neovim ripgrep proctools hub jq rmtrash shellcheck)
+brew install "${brews[@]}" || brew upgrade "${brews[@]}"
 
 echo
 echo 'Installing apps...'
