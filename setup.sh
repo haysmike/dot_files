@@ -20,7 +20,7 @@ defaults write -g ApplePressAndHoldEnabled -bool 'NO'
 echo
 echo 'Installing Homebrew...'
 if ! which -s brew; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/install)" < $input
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 brew doctor || read -p 'There are issues with `brew`. Press Enter to continue. '
 PATH=/usr/local/bin:$PATH
