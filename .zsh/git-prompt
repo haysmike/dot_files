@@ -1,11 +1,12 @@
 #!/usr/bin/env zsh
+# shellcheck shell=sh
 
 git_dir() {
   git rev-parse --is-inside-work-tree >/dev/null 2>&1
 }
 
 git_branch() {
-  echo "$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)"
+  git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null
 }
 
 git_status() {
@@ -13,9 +14,9 @@ git_status() {
 }
 
 if git_dir ; then
-  if [[ -z $(git_status) ]]; then
-    echo -n "%F{green}($(git_branch))%f "
+  if [ -z "$(git_status)" ]; then
+    print "%F{green}($(git_branch))%f "
   else
-    echo -n "%F{yellow}($(git_branch))%f "
+    print "%F{yellow}($(git_branch))%f "
   fi
 fi

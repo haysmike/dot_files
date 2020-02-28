@@ -1,3 +1,5 @@
-. $HOME/.bashrc
+# shellcheck shell=bash
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# shellcheck source=.bashrc
+. "$HOME/.bashrc"
+

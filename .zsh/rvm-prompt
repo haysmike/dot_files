@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
+# shellcheck shell=sh
 
-if [[ -n $GEM_HOME ]]; then
-  if [[ ! -s $GEM_HOME ]]; then
-    echo -n "%F{red}(${GEM_HOME#$HOME/.rvm/gems/})%f "
+if [ -n "$GEM_HOME" ]; then
+  if [ ! -s "$GEM_HOME" ]; then
+    print "%F{red}(${GEM_HOME#$HOME/.rvm/gems/})%f "
   else
-    echo -n "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f%b "
+    print "%B%F{black}(${GEM_HOME#$HOME/.rvm/gems/})%f%b "
   fi
 fi

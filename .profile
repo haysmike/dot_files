@@ -1,3 +1,5 @@
+# shellcheck shell=sh
+
 # color ls!
 export CLICOLOR='yes'
 export LSCOLORS='gxfxcxdxbxegedabagacad'
@@ -69,22 +71,21 @@ if [ -d '/Applications/Android Studio.app' ]; then
   export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
 fi
 
+# JavaScript
 # yarn
 if type yarn > /dev/null 2>&1; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   alias y='yarn'
 fi
-
 # nodenv
 if type nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
-
 # node-build-update-defs
 if [ -d '/usr/local/opt/node-build-update-defs/share/node-build' ] > /dev/null 2>&1; then
-  export NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
+  NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
+  export NODE_BUILD_DEFINITIONS
 fi
-
 # needs to come after yarn/nodenv config
 # TODO should probably check for node/npm/yarn....?
 export PATH="./node_modules/.bin:$PATH"
@@ -97,4 +98,9 @@ fi
 # pyenv
 if type pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
+fi
+
+# rust
+if [ -d "$HOME/.cargo/bin" ] > /dev/null 2>&1; then
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi

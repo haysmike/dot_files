@@ -1,3 +1,6 @@
+# shellcheck shell=sh
+# shellcheck disable=SC2034 # Ignore unexported zsh config vars
+
 # completion
 autoload -U compinit && compinit
 setopt no_auto_menu
@@ -9,6 +12,7 @@ setopt prompt_subst
 # Any functions/scripts called here must include a trailing space for padding.
 # This avoids multiple spaces when one or more scripts returns nothing.
 PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})♪%f '
+# shellcheck disable=SC2016 # Don't want to expand expressions here
 RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%D{%L:%M%p %Z}'
 
 # set the title
@@ -42,10 +46,11 @@ WORDCHARS=''
 
 # spaces are ok for | and &
 # ZLE_REMOVE_SUFFIX_CHARS=' \t\n'
-ZLE_SPACE_SUFFIX_CHARS=$'&|'
+ZLE_SPACE_SUFFIX_CHARS='&|'
 
 # comments are ok
 setopt interactivecomments
 
-. $HOME/.profile
+# shellcheck source=.profile
+. "$HOME/.profile"
 

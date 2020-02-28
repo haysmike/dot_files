@@ -1,3 +1,6 @@
+# shellcheck shell=bash
+
 export PS1='\u@\h \[\033[36m\]\w \[\033[00m\]$ '
 
-. $HOME/.profile
+# shellcheck source=.profile
+. "$HOME/.profile"

@@ -1,17 +1,18 @@
 #!/usr/bin/env zsh
+# shellcheck shell=sh
 
 rbenv_status() {
   rbenv local 2>/dev/null
 }
 
 ruby_version() {
-  $HOME/.rbenv/shims/ruby --version 2> /dev/null
+  "$HOME/.rbenv/shims/ruby" --version 2> /dev/null
 }
 
-if [[ -n $(rbenv_status) ]]; then
-  if [[ -n $(ruby_version) ]]; then
-    echo -n "%B%F{black}($(rbenv_status)) %f%b"
+if [ -n "$(rbenv_status)" ]; then
+  if [ -n "$(ruby_version)" ]; then
+    print "%B%F{black}($(rbenv_status)) %f%b"
   else
-    echo -n "%F{red}($(rbenv_status)) %f"
+    print "%F{red}($(rbenv_status)) %f"
   fi
 fi

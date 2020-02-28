@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
+# shellcheck shell=sh
 
 # _zsh_nodenv_prompt() {
   nodenv_version=$(nodenv version-name 2>&1)
   nodenv_status=$?
-  if [[ -n $nodenv_version ]]; then
-    if [[ $nodenv_status -gt 0 ]]; then
-      echo -n "%F{1}($nodenv_version) %f"
+  if [ -n "$nodenv_version" ]; then
+    if [ $nodenv_status -gt 0 ]; then
+      print "%F{1}($nodenv_version) %f"
     else
-      echo -n "%F{8}($nodenv_version) %f"
+      print "%F{8}($nodenv_version) %f"
     fi
   fi
 # }
