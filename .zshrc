@@ -32,7 +32,7 @@ bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
 # history
-HISTSIZE=2000
+HISTSIZE=20000
 SAVEHIST=$HISTSIZE
 HISTFILE=$HOME/.zsh_history
 setopt inc_append_history
