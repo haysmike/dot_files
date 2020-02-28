@@ -2,7 +2,7 @@
 # shellcheck shell=sh
 
 rbenv_status() {
-  rbenv local 2>/dev/null
+  rbenv local 2> /dev/null
 }
 
 ruby_version() {
