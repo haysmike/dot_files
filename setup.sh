@@ -84,6 +84,14 @@ fi
 sudo chsh -s $zsh_path "$USER"
 
 echo
+echo 'Setting up Firefox'
+if ! [ -d "$HOME/Library/Application Support/Firefox/Profiles" ] > /dev/null 2>&1; then
+  open -a Firefox
+  sleep 3
+fi
+find "$HOME/Library/Application Support/Firefox/Profiles" -type d -depth 1 -exec ln -s "$HOME/code/dot_files/firefox/chrome" {} \;
+
+echo
 echo 'Setting up Visual Studio Code...'
 '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --install-extension 'shan.code-settings-sync'
 if ! type code > /dev/null 2>&1; then
