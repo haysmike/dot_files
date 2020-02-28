@@ -104,6 +104,7 @@ if ! command -v code > /dev/null 2>&1; then
 3. Close this file.' | '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --wait -
 fi
 
+echo
 read -r -n 1 -p 'Update and restart [y/N]? ' yn < $input
 echo
 case $yn in
@@ -111,3 +112,7 @@ case $yn in
 esac
 
 sudo --reset-timestamp
+
+echo
+echo 'Done.'
+echo
