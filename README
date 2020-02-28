@@ -1,4 +1,0 @@
-# usage:
-cd code
-git clone git@github.com:murkey/dot_files.git
-./setup.sh

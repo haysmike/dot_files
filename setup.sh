@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+input='/dev/tty'
+
 sudo --validate
 
 echo
@@ -20,9 +22,9 @@ defaults write -g ApplePressAndHoldEnabled -bool 'NO'
 echo
 echo 'Installing Homebrew...'
 if ! command -v brew; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < $input
 fi
-brew doctor || read -r -p 'There are issues with Homebrew. Please review and press Enter to continue. '
+brew doctor || read -r -p 'There are issues with Homebrew. Please review and press Enter to continue. ' < $input
 PATH=/usr/local/bin:$PATH
 
 echo
@@ -56,7 +58,7 @@ if ! [ -f ~/.ssh/id_rsa.pub ]; then
 
   echo 'New SSH public key copied. Add it to your account here: https://github.com/settings/keys.'
   open -a Firefox https://github.com/settings/keys
-  read -r -p 'Press Enter to continue. '
+  read -r -p 'Press Enter to continue. ' < $input
 fi
 
 echo
@@ -78,7 +80,7 @@ link_dotfile .psqlrc
 echo
 echo 'Switching to zsh...'
 zsh_path='/usr/local/bin/zsh'
-if ! grep --fixed-strings $zsh_path < /etc/shells; then
+if ! grep --fixed-strings $zsh_path /etc/shells > /dev/null 2>&1; then
   sudo --preserve-env bash -c "echo $zsh_path >> /etc/shells"
 fi
 sudo chsh -s $zsh_path "$USER"
@@ -102,7 +104,8 @@ if ! type code > /dev/null 2>&1; then
 3. Close this file.' | '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --wait -
 fi
 
-read -r -p 'Update and restart [yN]? ' yn
+read -r -n 1 -p 'Update and restart [y/N]? ' yn < $input
+echo
 case $yn in
   [Yy]* ) sudo softwareupdate --install --all --restart;;
 esac
