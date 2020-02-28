@@ -96,7 +96,7 @@ find "$HOME/Library/Application Support/Firefox/Profiles" -type d -depth 1 -exec
 echo
 echo 'Setting up Visual Studio Code...'
 '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' --install-extension 'shan.code-settings-sync'
-if ! type code > /dev/null 2>&1; then
+if ! command -v code > /dev/null 2>&1; then
   echo $'CONFIGURE VISUAL STUDIO CODE
 
 1. Use the command palette to install the `code` command (Cmd+Shift+P and search for "install code command")

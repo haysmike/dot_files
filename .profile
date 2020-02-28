@@ -23,7 +23,7 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 
 # git
-if type git > /dev/null 2>&1; then
+if command -v git > /dev/null 2>&1; then
   alias g='git'
 
   alias a='git add'
@@ -39,12 +39,12 @@ if type git > /dev/null 2>&1; then
 fi
 
 # homebrew
-if type brew > /dev/null 2>&1; then
+if command -v brew > /dev/null 2>&1; then
   export PATH="/usr/local/bin:$PATH"
 fi
 
 # neovim
-if type nvim > /dev/null 2>&1; then
+if command -v nvim > /dev/null 2>&1; then
   alias vim='nvim'
   export EDITOR='nvim'
 else
@@ -52,7 +52,7 @@ else
 fi
 
 # ripgrep
-if type rg > /dev/null 2>&1; then
+if command -v rg > /dev/null 2>&1; then
   # https://github.com/BurntSushi/ripgrep/issues/86
   rg() {
     if [ -t 1 ]; then
@@ -73,12 +73,12 @@ fi
 
 # JavaScript
 # yarn
-if type yarn > /dev/null 2>&1; then
+if command -v yarn > /dev/null 2>&1; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   alias y='yarn'
 fi
 # nodenv
-if type nodenv > /dev/null 2>&1; then
+if command -v nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 # node-build-update-defs
@@ -91,12 +91,12 @@ fi
 export PATH="./node_modules/.bin:$PATH"
 
 # rbenv
-if type rbenv > /dev/null 2>&1; then
+if command -v rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
 # pyenv
-if type pyenv > /dev/null 2>&1; then
+if command -v pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
