@@ -2,6 +2,7 @@
 # shellcheck disable=SC2034 # Ignore unexported zsh config vars
 
 # completion
+autoload bashcompinit && bashcompinit
 autoload -U compinit && compinit
 setopt no_auto_menu
 setopt no_beep
@@ -13,7 +14,10 @@ setopt prompt_subst
 # This avoids multiple spaces when one or more scripts returns nothing.
 PS1='%n@%m %F{cyan}%~%f $($HOME/.zsh/git-prompt)%(?..%F{red})♪%f '
 # shellcheck disable=SC2016 # Don't want to expand expressions here
-RPS1='$($HOME/.zsh/nodenv-prompt)$($HOME/.zsh/rbenv-prompt)%D{%L:%M%p %Z}'
+RPS1='$($HOME/.zsh/asdf-node-prompt)%D{%L:%M%p %Z}'
+
+# outputs stats after long-running commands
+REPORTTIME=3
 
 # set the title
 precmd () {
