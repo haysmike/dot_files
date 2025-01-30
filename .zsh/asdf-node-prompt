@@ -6,7 +6,7 @@ asdf_node_status=$?
 asdf_node_version=$(echo "$asdf_node_output" | cut -w -f2)
 if [ $asdf_node_status -ne 126 ]; then
     if [ $asdf_node_status -gt 0 ]; then
-        print "%F{1}($asdf_node_version) %f"
+        print "%F{red}($asdf_node_version) %f"
     else
         print "%F{8}($asdf_node_version) %f"
     fi
