@@ -1,9 +1,26 @@
-[user]
-	name = murkey
-	email = haysmikethere@gmail.com
 [commit]
 	verbose = true
-[push]
-	followTags = true
+[core]
+	editor = code --wait
+[diff]
+	noprefix = true
+	tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[fetch]
+	all = true
+	prune = true
+	pruneTags = true
+[init]
+	defaultBranch = main
 [log]
 	abbrevCommit = true
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[push]
+	autoSetupRemote = true
+	followTags = true
